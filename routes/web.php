@@ -19,7 +19,7 @@ Route::get('/', static function () {
 });
 
 
-Route::resource('/material-ui', 'Mui\MaterialUiController' );
+Route::resource('/material-ui', 'Mui\MaterialUiController' )->middleware('auth');
 
 Auth::routes();
 
