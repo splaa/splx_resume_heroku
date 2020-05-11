@@ -20,8 +20,9 @@ Route::get('/', static function () {
 
 
 Route::resource('/material-ui', 'Mui\MaterialUiController' )->middleware('auth');
-Route::resource('/react/1', static function(){
-    return view('react.1.index');
+
+Route::get('/react', static function(){
+    return view('react.one.index');
 });
 
 Auth::routes();

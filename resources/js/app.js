@@ -13,4 +13,5 @@ require('./bootstrap');
  */
 
 require('./components/Example');
-require('./components/m-ui/App');
+// require('./components/m-ui/App');
+require('./components/course-lushchenko/App');
