@@ -16,3 +16,5 @@ require('./bootstrap');
 require('./components/Example');
 // require('./components/m-ui/App');
 require('./components/course-lushchenko/App');
+require('./components/course-lushchenko/home-work/HomeWork');
+require('./components/course-lushchenko/Lessons');
