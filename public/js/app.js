@@ -65919,8 +65919,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _course_lushchenko_App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./course-lushchenko/App */ "./resources/js/components/course-lushchenko/App.js");
-
 
 
 
@@ -65943,7 +65941,7 @@ function Example() {
 /* harmony default export */ __webpack_exports__["default"] = (Example);
 
 if (document.getElementById('example')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_course_lushchenko_App__WEBPACK_IMPORTED_MODULE_2__["default"], null), document.getElementById('example'));
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Example, null), document.getElementById('example'));
 }
 
 /***/ }),
@@ -65993,22 +65991,58 @@ var App = /*#__PURE__*/function (_Component) {
 
   var _super = _createSuper(App);
 
-  function App() {
+  function App(props) {
+    var _this;
+
     _classCallCheck(this, App);
 
-    return _super.apply(this, arguments);
+    _this = _super.call(this, props); //Initialize the state in the constructor
+
+    _this.state = {
+      products: ['апельсины', 'яблоки'],
+      show: "Show Main Menu"
+    };
+    _this.showMenu = _this.showMenu.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(App, [{
     key: "render",
     value: function render() {
-      this.props.nav;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "App"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_Header__WEBPACK_IMPORTED_MODULE_2__["default"], {
         title: "SplX Site",
         nav: nav
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Footer")));
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.state.show), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        onClick: this.showMenu
+      }, this.state.show), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.renderProducts())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Footer")));
+    }
+  }, {
+    key: "showMenu",
+    value: function showMenu() {
+      // console.log('work');
+      console.log(this);
+      this.setState({
+        show: "Hide Menu "
+      });
+    }
+  }, {
+    key: "renderProducts",
+    value: function renderProducts() {
+      return this.state.products.map(function (product) {
+        return (
+          /*#__PURE__*/
+
+          /* При использовании <li> необходимо указать key=""
+           * атрибут,должен быть уникальный для каждого элемента списка
+          */
+          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+            key: product
+          }, product)
+        );
+      });
     }
   }]);
 
@@ -66116,6 +66150,8 @@ var Header = /*#__PURE__*/function (_Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -66140,28 +66176,63 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var Nav = /*#__PURE__*/function (_Component) {
   _inherits(Nav, _Component);
 
   var _super = _createSuper(Nav);
 
-  function Nav() {
+  function Nav(props) {
+    var _this;
+
     _classCallCheck(this, Nav);
 
-    return _super.apply(this, arguments);
+    _this = _super.call(this, props);
+    _this.state = {
+      title: "Navigation",
+      subtitle: 'Main menu',
+      show: "show",
+      text2: "text start"
+    };
+    _this.showNav = _this.showNav.bind(_assertThisInitialized(_this));
+    _this.showText2 = _this.showText2.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(Nav, [{
+    key: "showNav",
+    value: function showNav() {
+      console.log('hi');
+      this.setState({
+        show: "Hide"
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var nav = this.props.nav;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", null, "Nav Bar Hello", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, Object.keys(nav).map(function (elem) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.state.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.state.subtitle), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.state.show), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        onClick: this.showNav
+      }, "Show menu"), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.state.text2), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        defaultValue: this.state.title,
+        onInput: this.showText2
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, Object.keys(nav).map(function (elem) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: elem
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           href: "{nav[elem]}"
-        }, " ", elem, " "), " ");
+        }, " ", elem, " "));
       })));
+    }
+  }, {
+    key: "showText2",
+    value: function showText2(e) {
+      console.log('work2');
+      this.setState({
+        text2: e.target.value
+      });
     }
   }]);
 
