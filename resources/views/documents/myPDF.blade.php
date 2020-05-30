@@ -5,14 +5,14 @@
     <title>Resume</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="http://127.0.0.1:8001/js/app.js" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="http://127.0.0.1:8001/css/app.css" rel="stylesheet">
 </head>
 <body>
 <div class="card-body">
@@ -25,14 +25,14 @@
                     <h1>Andrii Lavryniuk</h1>
                 </div>
                 <div class="col-6">
-                    <p class="text-right"><a href="{{ route('resume.pdf') }}">Download my Resume</a></p>
+                    <p class="text-right"><a href="http://127.0.0.1:8001/resume/pdf">Download my Resume</a></p>
                 </div>
             </div>
             <hr>
             <div class="row">
                 <div class="col-md-8 col-sm-12">
                     <div class="media">
-                        <img class="mr-3" src=" {{ asset('images/resume/andr.jpg') }}"
+                        <img class="mr-3" src=" http://127.0.0.1:8001/images/resume/andr.jpg"
                              alt="Generic placeholder image"
                              height="150px"
                              width="90px">
@@ -155,7 +155,7 @@
                         </div>
                         <div><a href="http://35.198.71.142/registration/">
                                 <img class="img-thumbnail"
-                                     src="{{ asset('images/resume/portfolio-test-one.png') }}"
+                                     src="http://127.0.0.1:8001/images/resume/portfolio-test-one.png"
                                      alt="Тестовое задание"
                                      height="300px"
                                 >
@@ -172,7 +172,7 @@
                         </div>
                         <div><a href="http://35.206.99.76/">
                                 <img class="img-thumbnail"
-                                     src="{{ asset('images/resume/portfolio-test-bee-jee.png') }}"
+                                     src="http://127.0.0.1:8001/images/resume/portfolio-test-bee-jee.png"
                                      alt="Тестовое задание"
                                      height="300px"
                                 >
@@ -189,7 +189,7 @@
                         </div>
                         <div><a href="#">
                                 <img class="img-thumbnail"
-                                     src="{{ asset('images/resume/300X200.gif') }}"
+                                     src="http://127.0.0.1:8001/images/resume/300X200.gif"
                                      alt="Фото задания"
                                      height="300px"
                                 >
@@ -198,15 +198,15 @@
                     </div>
                     <div class="col-sm-4 col-12 p-0">
                         <img class="img-thumbnail"
-                             src="{{asset('/images/resume/300X200.gif')}}"
+                             src="http://127.0.0.1:8001/images/resume/300X200.gif"
                              alt=""></div>
                     <div class="col-sm-4 col-12 p-0">
                         <img class="img-thumbnail"
-                             src="{{ asset('/images/resume/300X200.gif') }}"
+                             src="http://127.0.0.1:8001/images/resume/300X200.gif"
                              alt=""></div>
                     <div class="col-sm-4 col-12 p-0">
                         <img class="img-thumbnail"
-                             src="{{ asset('images/resume/300X200.gif') }}"
+                             src="http://127.0.0.1:8001/images/resume/300X200.gif"
                              alt=""></div>
                 </div>
             </div>

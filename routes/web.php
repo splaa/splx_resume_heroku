@@ -41,6 +41,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/resume', function () {
-  return view('documents.resume');
-})->name('resume');
+Route::get('/resume', 'Documents\ResumeController@index')->name('resume');
+Route::get('/resume/pdf', 'Documents\ResumeController@generateResumePDF')
+    ->name('resume.pdf');
