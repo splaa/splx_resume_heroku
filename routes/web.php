@@ -39,3 +39,8 @@ Route::get('/react/dz/{numberHomeWork}', static function($numberHomeWork){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/resume', function () {
+  return view('documents.resume');
+})->name('resume');
