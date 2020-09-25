@@ -25,7 +25,7 @@
                     <h1>Andrii Lavryniuk</h1>
                 </div>
                 <div class="col-6">
-                    <p class="text-right"><a href="{{ route('resume.pdf') }}">Download my Resume</a></p>
+                    <p class="text-right"><a href="#{{--{{ route('resume.pdf') }}--}}">Download my Resume</a></p>
                 </div>
             </div>
             <hr>
@@ -91,7 +91,7 @@
                     </p>
                     <div class="row">
                         <div class="col-6">
-                            <h4>Дополнительная Информация</h4>
+                            <h4>Доп. Инфо</h4>
                         </div>
                     </div>
                     <h5><span class="badge badge-secondary"></span></h5>
