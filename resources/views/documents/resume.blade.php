@@ -50,8 +50,8 @@
                         <address>
                             <strong>Andrii Lavryniuk</strong><br>
                             L.Ukrainky 123<br>
-                            Peremyshl, Khmelnytska obl<br>
-                            Slavutskyi, Ukraina<br>
+                            Peremyshl, Slavutskyi<br>
+                            Khmelnytska obl,Ukraina<br>
                             <abbr title="Phone">t:</abbr> (+380) 686-987-691<br>
                             <a href="mailto:#">splaandrey@gmail.com</a>
                         </address>
