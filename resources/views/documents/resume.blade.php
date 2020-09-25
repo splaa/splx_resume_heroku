@@ -1,5 +1,5 @@
 <!doctype html>
-<html >
+<html>
 <head>
 
     <title>Resume</title>
@@ -89,6 +89,16 @@
                         SoftGroup PHP Academy <a href="http://academy.softgroup.ua/">(курсы)</a> <br>
                         SoftGroup Yii2 <a href="http://academy.softgroup.ua/">(курсы)</a>
                     </p>
+                    <div class="row">
+                        <div class="col-6">
+                            <h4>Дополнительная Информация</h4>
+                        </div>
+                    </div>
+                    <h5><span class="badge badge-secondary"></span></h5>
+                    <p>
+                        Иностранные языки:(Английский: чтение технической документации) <br>
+                    </p>
+
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <h2>Skill Set</h2>
