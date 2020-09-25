@@ -104,6 +104,11 @@
                         </div>
                     </div>
                     <div class="progress mt-4">
+                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+                             aria-valuemax="55" style="width: 80%"> JAVASCRIPT React,Vue
+                        </div>
+                    </div>
+                    <div class="progress mt-4">
                         <div class="progress-bar bg-info" role="progressbar" aria-valuenow="60" aria-valuemin="0"
                              aria-valuemax="100" style="width: 60%"> PHP
                         </div>
@@ -115,14 +120,21 @@
                     </div>
                     <div class="progress mt-4">
                         <div class="progress-bar bg-info" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+                             aria-valuemax="100" style="width: 70%"> Laravel
+                        </div>
+                    </div>
+
+                    <div class="progress mt-4">
+                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="70" aria-valuemin="0"
                              aria-valuemax="100" style="width: 30%">Symfony
                         </div>
                     </div>
                     <div class="progress mt-4">
-                        <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="55" aria-valuemin="0"
-                             aria-valuemax="100" style="width: 25%">JAVASCRIPT React
+                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+                             aria-valuemax="100" style="width: 30%">OpenCart 2
                         </div>
                     </div>
+
                     <div class="progress mt-4">
                         <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0"
                              aria-valuemax="100" style="width: 79%">Git
@@ -130,12 +142,12 @@
                     </div>
                     <div class="progress mt-4">
                         <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="30" aria-valuemin="0"
-                             aria-valuemax="100" style="width: 69%"> Docker
+                             aria-valuemax="100" style="width: 69%"> Docker Docker-compose
                         </div>
                     </div>
                     <div class="progress mt-4">
                         <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="15" aria-valuemin="0"
-                             aria-valuemax="100" style="width: 69%"> AWS GoogleCloud DevOps
+                             aria-valuemax="100" style="width: 69%"> AWS GoogleCloud DevOps Heroku
                         </div>
                     </div>
                 </div>
