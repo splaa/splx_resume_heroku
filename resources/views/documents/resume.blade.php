@@ -115,7 +115,7 @@
                     </div>
                     <div class="progress mt-4">
                         <div class="progress-bar bg-info" role="progressbar" aria-valuenow="70" aria-valuemin="0"
-                             aria-valuemax="100" style="width: 50%"> Yii2
+                             aria-valuemax="100" style="width: 60%"> Yii2
                         </div>
                     </div>
                     <div class="progress mt-4">
