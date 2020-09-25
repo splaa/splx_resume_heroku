@@ -105,17 +105,17 @@
                     </div>
                     <div class="progress mt-4">
                         <div class="progress-bar bg-success" role="progressbar" aria-valuenow="80" aria-valuemin="0"
-                             aria-valuemax="55" style="width: 80%"> JAVASCRIPT React,Vue
+                             aria-valuemax="55" style="width: 40%"> JavaScript React,Vue
                         </div>
                     </div>
                     <div class="progress mt-4">
                         <div class="progress-bar bg-info" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-                             aria-valuemax="100" style="width: 60%"> PHP
+                             aria-valuemax="100" style="width: 50%"> PHP
                         </div>
                     </div>
                     <div class="progress mt-4">
                         <div class="progress-bar bg-info" role="progressbar" aria-valuenow="70" aria-valuemin="0"
-                             aria-valuemax="100" style="width: 70%"> Yii2
+                             aria-valuemax="100" style="width: 50%"> Yii2
                         </div>
                     </div>
                     <div class="progress mt-4">
@@ -126,12 +126,12 @@
 
                     <div class="progress mt-4">
                         <div class="progress-bar bg-info" role="progressbar" aria-valuenow="70" aria-valuemin="0"
-                             aria-valuemax="100" style="width: 30%">Symfony
+                             aria-valuemax="100" style="width: 20%">Symfony
                         </div>
                     </div>
                     <div class="progress mt-4">
                         <div class="progress-bar bg-info" role="progressbar" aria-valuenow="70" aria-valuemin="0"
-                             aria-valuemax="100" style="width: 30%">OpenCart 2
+                             aria-valuemax="100" style="width: 20%">OpenCart 2
                         </div>
                     </div>
 
