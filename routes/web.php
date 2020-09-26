@@ -48,7 +48,9 @@ Route::get('/phpinfo', function () {
     return phpinfo();
 });
 Route::get('/tests', function () {
-    dd(is_id_term('id:1'));
+    $post = \App\Models\Post::factory()->create();
+    dd($post);
+    return;
 });
 Route::get('/hello', function () {
     return 'hello';
