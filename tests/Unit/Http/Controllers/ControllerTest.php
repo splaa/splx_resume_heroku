@@ -7,8 +7,8 @@ use PHPUnit\Framework\TestCase;
 
 class ControllerTest extends TestCase
 {
-    public function testIndex()
+    public function testIndex(): void
     {
-
+            self::assertTrue(true);
 }
 }
