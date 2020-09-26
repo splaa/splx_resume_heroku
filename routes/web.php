@@ -50,3 +50,6 @@ Route::get('/phpinfo', function () {
 Route::get('/tests', function () {
     dd(is_id_term('id:1'));
 });
+Route::get('/hello', function () {
+    return 'hello';
+});
