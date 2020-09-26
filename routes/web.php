@@ -44,3 +44,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/resume', 'Documents\ResumeController@index')->name('resume');
 Route::get('/resume/pdf', 'Documents\ResumeController@generateResumePDF')
     ->name('resume.pdf');
+
+Route::get('/phpinfo', function () {
+    return phpinfo();
+});
