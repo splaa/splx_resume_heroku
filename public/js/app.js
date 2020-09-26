@@ -67224,8 +67224,8 @@ module.exports = "/images/logo.svg?5d5d9eefa31e5e13a6610d9fa7a283bb";
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Volumes/Samsung970Pro/www/Laravel/lr-rt-heroku.loc/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Volumes/Samsung970Pro/www/Laravel/lr-rt-heroku.loc/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/splx/Sites/splx/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/splx/Sites/splx/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
