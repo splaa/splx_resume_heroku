@@ -13,3 +13,5 @@ npm-debug.log
 yarn-error.log
 
 /add_heroku_env.sh
+yarn.lock
+package-lock.json
