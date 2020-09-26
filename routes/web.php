@@ -19,21 +19,20 @@ Route::get('/', static function () {
 });
 
 
-Route::resource('/material-ui', 'Mui\MaterialUiController' )->middleware('auth');
+Route::resource('/material-ui', 'Mui\MaterialUiController')->middleware('auth');
 
-Route::get('/react', static function(){
+Route::get('/react', static function () {
     return view('react.one.index');
 });
 
-Route::get('/react/lesson/{lessonNumber}', static function($lessonNumber){
-
+Route::get('/react/lesson/{lessonNumber}', static function ($lessonNumber) {
     return view('react.lessons.lesson')
         ->withLessonNumber($lessonNumber);
 })->where('lessonNumber', '[0-9]+');
 
 
-Route::get('/react/dz/{numberHomeWork}', static function($numberHomeWork){
-    return view('react.home-work.' . $numberHomeWork);
+Route::get('/react/dz/{numberHomeWork}', static function ($numberHomeWork) {
+    return view('react.home-work.'.$numberHomeWork);
 });
 
 Auth::routes();
@@ -47,4 +46,7 @@ Route::get('/resume/pdf', 'Documents\ResumeController@generateResumePDF')
 
 Route::get('/phpinfo', function () {
     return phpinfo();
+});
+Route::get('/tests', function () {
+    dd(is_id_term('id:1'));
 });
