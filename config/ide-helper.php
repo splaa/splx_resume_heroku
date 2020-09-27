@@ -1,5 +1,9 @@
 <?php
 
+use Illuminate\Session\Store;
+use Illuminate\Database\Eloquent\Builder;
+use \Illuminate\Database\Query\Builder as QueryBuilder;
+
 return [
 
     /*
@@ -35,7 +39,7 @@ return [
     |
     */
 
-    'include_fluent' => false,
+    'include_fluent' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -96,7 +100,7 @@ return [
     |
     */
 
-    'include_helpers' => false,
+    'include_helpers' => true,
 
     'helper_files' => [
         base_path() . '/vendor/laravel/framework/src/Illuminate/Support/helpers.php',
@@ -142,8 +146,8 @@ return [
     */
 
     'extra' => [
-        'Eloquent' => ['Illuminate\Database\Eloquent\Builder', 'Illuminate\Database\Query\Builder'],
-        'Session' => ['Illuminate\Session\Store'],
+        'Eloquent' => [Builder::class, QueryBuilder::class],
+        'Session' => [Store::class],
     ],
 
     'magic' => [],
