@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Blog\PostsController;
+use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -48,10 +50,8 @@ Route::get('/phpinfo', function () {
     return phpinfo();
 });
 Route::get('/tests', function () {
-    $post = \App\Models\Post::factory()->create();
+    $post = Post::factory()->create();
     dd($post);
     return;
 });
-Route::get('/hello', function () {
-    return 'hello';
-});
+Route::resource('/posts', 'Blog\PostsController')->names('posts');
