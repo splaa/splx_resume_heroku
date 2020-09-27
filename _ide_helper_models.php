@@ -22,8 +22,12 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $published_at
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Post hasNotVideo()
+ * @method static \Illuminate\Database\Eloquent\Builder|Post hasVideo($has = true)
  * @method static \Illuminate\Database\Eloquent\Builder|Post newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Post newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Post published()
+ * @method static \Illuminate\Database\Eloquent\Builder|Post q($q)
  * @method static \Illuminate\Database\Eloquent\Builder|Post query()
  * @method static \Illuminate\Database\Eloquent\Builder|Post whereBody($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Post whereCreatedAt($value)
