@@ -27,7 +27,7 @@
                             <br>
                             Дата: {{ date_format($post->created_at, 'd.m.Y H:i') }}
                         </span>
-                        <a href="#" class="btn btn-dark float-right">Редактировать</a>
+                        <a href="{{ route('blog.posts.edit', $post) }}" class="btn btn-dark float-right">Редактировать</a>
                     </div>
                 </div>
             </div>
