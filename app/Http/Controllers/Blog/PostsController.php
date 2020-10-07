@@ -31,7 +31,10 @@ class PostsController extends Controller
         }
         return response($query->get());*/
 
-        $posts = Post::all();
+        $posts = Post::select('posts.*', 'users.name as author')
+            ->join('users', 'posts.author_id', '=', 'users.id')
+            ->orderBy('posts.created_at', 'desc')
+            ->paginate(4);
         return view('blog.posts.index', ['posts' => $posts]);
     }
 

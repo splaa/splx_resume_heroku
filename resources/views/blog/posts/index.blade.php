@@ -1,9 +1,11 @@
 @php
     /**
-     * @var Post[] $posts
+     * @var Post[]|Collection|Response $posts
      * @var Post $post
      */
     use App\Models\Post;
+    use Illuminate\Database\Eloquent\Collection;
+    use Illuminate\Http\Response;
 @endphp
 @extends('blog.layouts.blog')
 
@@ -14,5 +16,6 @@
            @include('blog.parts.posts.__cart', compact('post'))
         @endforeach
     </div>
+    {{ $posts->links('vendor/pagination/bootstrap-4')}}
 @endsection
 
