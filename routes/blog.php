@@ -2,5 +2,7 @@
 
 use App\Http\Controllers\Blog\PostsController;
 
-Route::resource('/', 'Blog\PostsController')->names('blog.posts');
-Route::get('post/search', [PostsController::class,'search'])->name('blog.posts.search');
+Route::prefix('posts')->group(function () {
+    Route::resource('/', 'Blog\PostsController')->names('blog.posts');
+    Route::get('search', [PostsController::class, 'search'])->name('blog.posts.search');
+});

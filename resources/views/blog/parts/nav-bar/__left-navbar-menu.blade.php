@@ -4,7 +4,7 @@
         <a class="nav-link" href="#">Авторы</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">Создать</a>
+        <a class="nav-link" href="{{ route('blog.posts.create') }}">Создать</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#">Портфолио</a>

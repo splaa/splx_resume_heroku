@@ -22,6 +22,7 @@
     <div id="app">
         @include('blog.parts.nav-bar.__nav-dark-theme')
         <main class="py-4 container">
+            @include('blog.parts.__flash')
             @yield('content')
         </main>
     </div>

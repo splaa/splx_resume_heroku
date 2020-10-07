@@ -4,12 +4,20 @@ namespace App\Http\Controllers\Blog;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
+use Faker\Factory;
+use Faker\Generator;
+use Illuminate\Support\Str;
 
 class PostsController extends Controller
 {
+    use WithFaker;
     /* ... */
     public function search(Request $request) {
         $search = $request->input('search', '');
@@ -68,18 +76,30 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        return view('blog.posts.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return Response
+     * @param  Request  $request
+     * @return RedirectResponse
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
-        //
+        $post = new Post();
+        $post->author_id = array_rand(User::pluck('id')->toArray());
+        $post->title = $request->input('title');
+        $post->slug = Str::slug($post->title);
+        $post->excerpt = $request->input('excerpt');
+        $post->body = $request->input('body');
+        $image = $request->file('image');
+        if ($image) {
+            $path = Storage::putFile('public', $image);
+            $post->image = Storage::url($path);
+        }
+        $post->save();
+        return redirect()->route('blog.posts.index')->with('success', 'Новый пост успешно создан');
     }
 
     /**
@@ -107,7 +127,7 @@ class PostsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  Request  $request
      * @param  int  $id
      * @return Response
      */

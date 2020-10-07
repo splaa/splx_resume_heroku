@@ -36,6 +36,10 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('resume') }}">{{ __('Resume') }}</a>
                         </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('blog.posts.index') }}">{{ __('Blog') }}</a>
+                        </li>
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
