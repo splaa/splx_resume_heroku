@@ -54,4 +54,4 @@ Route::get('/tests', function () {
     dd($post);
     return;
 });
-Route::resource('/posts', 'Blog\PostsController')->names('posts');
+
