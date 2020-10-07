@@ -30,7 +30,7 @@
         "nunomaduro/collision": "^v5.0.0",
         "phpunit/phpunit": "^9.3.11",
         "ext-json": "*",
-        "ext-http": "*"
+        "ext-gd": "*"
     },
     "config": {
         "optimize-autoloader": true,

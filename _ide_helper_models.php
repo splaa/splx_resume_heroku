@@ -21,10 +21,12 @@ namespace App\Models{
  * @property string $excerpt
  * @property string|null $body
  * @property string|null $image
+ * @property string|null $thumb
  * @property string|null $video_url
  * @property \Illuminate\Support\Carbon|null $published_at
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\User|null $author
  * @method static \Illuminate\Database\Eloquent\Builder|Post hasNotVideo()
  * @method static \Illuminate\Database\Eloquent\Builder|Post hasVideo($has = true)
  * @method static \Illuminate\Database\Eloquent\Builder|Post newModelQuery()
@@ -40,6 +42,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Post whereImage($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Post wherePublishedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Post whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereThumb($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Post whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Post whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Post whereVideoUrl($value)
