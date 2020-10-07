@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 
@@ -20,13 +21,15 @@ class PostFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition():array
     {
         $set_now_time = now();
-
+        $userIds = $this->faker->randomElement(User::pluck('id'));
         return [
-            'title' => $this->faker->title,
+            'title' => $this->faker->unique()->name,
+            'author_id' => $userIds ?? null,
             'slug' => $this->faker->unique()->slug,
+            'excerpt' => $this->faker->sentence,
             'body' => $this->faker->text,
             'video_url' => 'https://www.youtube.com/watch?v=Joyz5S0skr4',
             'published_at' => $set_now_time,
