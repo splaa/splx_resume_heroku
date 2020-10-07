@@ -2,6 +2,7 @@
 /**
  * @var Post $post
  */
+
 use App\Models\Post;
 @endphp
 <div class="col-6 mb-4">
@@ -18,7 +19,7 @@ use App\Models\Post;
                                 <br>
                                 Дата: {{ date_format($post->created_at, 'd.m.Y H:i') }}
                             </span>
-                <a href="#" class="btn btn-dark float-right">Читать дальше</a>
+                <a href="{{ route('blog.posts.show',$post) }}" class="btn btn-dark float-right">Читать дальше</a>
             </div>
         </div>
     </div>

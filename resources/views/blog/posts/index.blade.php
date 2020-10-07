@@ -13,7 +13,7 @@
     <h1>Все посты блога</h1>
     <div class="row">
         @foreach($posts as $post)
-           @include('blog.parts.posts.__cart', compact('post'))
+          @include('blog.parts.posts.__cart', ['post' => $post])
         @endforeach
     </div>
     {{ $posts->links('vendor/pagination/bootstrap-4')}}

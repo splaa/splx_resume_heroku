@@ -24,6 +24,11 @@ class Post extends Model
         'published_at'
     ];
 
+    public function author()
+    {
+        return $this->hasOne(User::class);
+    }
+
     /**
      * только опубликованные посты
      * @param  Builder  $query

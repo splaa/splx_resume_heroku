@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Blog;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Models\User;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Http\RedirectResponse;
@@ -125,11 +128,15 @@ class PostsController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return Response
+     * @return Application|Factory|View|Response
      */
     public function show($id)
     {
-        //
+       dd( $id);
+        $post = Post::select('posts.*', 'users.name as author')
+            ->join('users', 'posts.author_id', '=', 'users.id')
+            ->find($id);
+        return view('blog.posts.show', compact('post'));
     }
 
     /**
