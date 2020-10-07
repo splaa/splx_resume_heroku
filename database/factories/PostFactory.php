@@ -31,6 +31,8 @@ class PostFactory extends Factory
             'slug' => $this->faker->unique()->slug,
             'excerpt' => $this->faker->sentence,
             'body' => $this->faker->text,
+            'image' => $this->faker->imageUrl(1200, 400),
+            'thumb' => $this->faker->imageUrl(600, 200),
             'video_url' => 'https://www.youtube.com/watch?v=Joyz5S0skr4',
             'published_at' => $set_now_time,
         ];

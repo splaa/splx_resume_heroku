@@ -177,6 +177,9 @@ return [
 
         Barryvdh\DomPDF\ServiceProvider::class,
 
+        /* ... */
+        Intervention\Image\ImageServiceProvider::class,
+
     ],
 
     /*
@@ -229,7 +232,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        /* Added ... */
         'PDF' => Barryvdh\DomPDF\Facade::class,
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 

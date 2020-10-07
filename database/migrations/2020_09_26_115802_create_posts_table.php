@@ -21,6 +21,7 @@ class CreatePostsTable extends Migration
             $table->string('excerpt', 200);
             $table->text('body')->nullable();
             $table->string('image')->nullable();
+            $table->string('thumb')->nullable();
             $table->string('video_url')->nullable();
             $table->timestamp('published_at')->nullable();
             $table->timestamps();

@@ -11,9 +11,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
-use Faker\Factory;
-use Faker\Generator;
 use Illuminate\Support\Str;
+use Image;
 
 class PostsController extends Controller
 {
@@ -93,10 +92,30 @@ class PostsController extends Controller
         $post->slug = Str::slug($post->title);
         $post->excerpt = $request->input('excerpt');
         $post->body = $request->input('body');
-        $image = $request->file('image');
-        if ($image) {
-            $path = Storage::putFile('public', $image);
-            $post->image = Storage::url($path);
+        $source = $request->file('image');
+
+
+        if ($source) {
+            $ext = str_replace('jpeg', 'jpg', $source->extension());
+            // уникальное имя файла, под которым сохраним его в storage/image/source
+            $name = md5(uniqid());
+            Storage::putFileAs('public/image/source', $source, $name. '.' . $ext);
+            // создаем jpg изображение для с страницы поста размером 1200x400, качество 100%
+            $image = Image::make($source)
+                ->resizeCanvas(1200, 400, 'center', false, 'dddddd')
+                ->encode('jpg', 100);
+            // сохраняем это изображение под именем $name.jpg в директории public/image/image
+            Storage::put('public/image/image/' . $name . '.jpg', $image);
+            $image->destroy();
+            $post->image = Storage::url('public/storage/image/image/' . $name . '.jpg');
+            // создаем jpg изображение для списка постов блога размером 600x200, качество 100%
+            $thumb = Image::make($source)
+                ->resizeCanvas(600, 200, 'center', false, 'dddddd')
+                ->encode('jpg', 100);
+            // сохраняем это изображение под именем $name.jpg в директории public/image/thumb
+            Storage::put('public/image/thumb/' . $name . '.jpg', $thumb);
+            $thumb->destroy();
+            $post->thumb = Storage::url('public/image/thumb/' . $name . '.jpg');
         }
         $post->save();
         return redirect()->route('blog.posts.index')->with('success', 'Новый пост успешно создан');
