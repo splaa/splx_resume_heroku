@@ -18,7 +18,7 @@ class PostsController extends Controller
      */
     public function index(Request $request)
     {
-        $this->validate($request,[
+       /* $this->validate($request,[
            'published' => 'nullable|boolean',
            'has_video' => 'nullable|boolean'
         ]);
@@ -29,7 +29,10 @@ class PostsController extends Controller
         if ($request->has_video) {
             $query->hasVideo();
         }
-        return response($query->get());
+        return response($query->get());*/
+
+        $posts = Post::all();
+        return view('blog.posts.index', ['posts' => $posts]);
     }
 
     /**
