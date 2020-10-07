@@ -10,6 +10,29 @@ use Illuminate\Http\Response;
 
 class PostsController extends Controller
 {
+    /* ... */
+    public function search(Request $request) {
+        $search = $request->input('search', '');
+        // обрезаем слишком длинный запрос
+        $search = iconv_substr($search, 0, 64);
+        // удаляем все, кроме букв и цифр
+        $search = preg_replace('#[^0-9a-zA-ZА-Яа-яёЁ]#u', ' ', $search);
+        // сжимаем двойные пробелы
+        $search = preg_replace('#\s+#u', ' ', $search);
+        if (empty($search)) {
+            return view('posts.search');
+        }
+        $posts = Post::select('posts.*', 'users.name as author')
+            ->join('users', 'posts.author_id', '=', 'users.id')
+            ->where('posts.title', 'like', '%'.$search.'%') // поиск по заголовку поста
+            ->orWhere('posts.body', 'like', '%'.$search.'%') // поиск по тексту поста
+            ->orWhere('users.name', 'like', '%'.$search.'%') // поиск по автору поста
+            ->orderBy('posts.created_at', 'desc')
+            ->paginate(4)
+            ->appends(['search' => $request->input('search')]);
+
+        return view('blog.posts.search', compact('posts'));
+    }
     /**
      * Display a listing of the resource.
      *
