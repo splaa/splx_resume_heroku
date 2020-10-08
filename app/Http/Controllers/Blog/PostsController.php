@@ -13,6 +13,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Image;
@@ -90,7 +91,7 @@ class PostsController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $post = new Post();
-        $post->author_id = array_rand(User::pluck('id')->toArray());
+        $post->author_id = Auth::user()->id??1;
         $post->title = $request->input('title');
         $post->slug = Str::slug($post->title);
         $post->excerpt = $request->input('excerpt');
